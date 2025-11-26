@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Techflitter/housing-mlops/mlruns/734453689598407122/e9458836bf554af48d358b23de0b01e1/artifacts
+deleted_time: 1764153238127
+end_time: 1764152955824
+entry_point_name: ''
+experiment_id: '734453689598407122'
+lifecycle_stage: deleted
+run_id: e9458836bf554af48d358b23de0b01e1
+run_name: RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764152948520
+status: 3
+tags: []
+user_id: Sumanasri

@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Techflitter/housing-mlops/mlruns/734453689598407122/models/m-acf52fed2119411a8cd31be20e286112/artifacts
+creation_timestamp: 1764153260101
+experiment_id: '734453689598407122'
+last_updated_timestamp: 1764153267845
+model_id: m-acf52fed2119411a8cd31be20e286112
+model_type: null
+name: model_LinearRegression
+source_run_id: 46a007fd974f49839b76160d666268c9
+status: 2
+status_message: null

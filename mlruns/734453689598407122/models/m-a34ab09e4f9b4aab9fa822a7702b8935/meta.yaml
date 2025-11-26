@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Techflitter/housing-mlops/mlruns/734453689598407122/models/m-a34ab09e4f9b4aab9fa822a7702b8935/artifacts
+creation_timestamp: 1764152853798
+experiment_id: '734453689598407122'
+last_updated_timestamp: 1764152860252
+model_id: m-a34ab09e4f9b4aab9fa822a7702b8935
+model_type: null
+name: model_DecisionTree
+source_run_id: cdfb8754af8e4b27a133b9433db581a3
+status: 2
+status_message: null
