@@ -1,11 +1,12 @@
 stages:
   preprocess:
-    cmd: python src/preprocessing/preprocess.py
+    cmd: python src/preprocessing/data_preprocessing.py
     deps:
-      - src/preprocessing/preprocess.py
-      - data/raw/housing.csv
+      - src/preprocessing/data_preprocessing.py
+      - data/Housing.csv
     outs:
       - data/preprocessed_data.csv
+      - models/preprocessor.pkl
 
   train:
     cmd: python src/model_trainer/model_trainer.py

@@ -1,0 +1,10 @@
+artifact_location: file:///D:/Techflitter/housing-mlops/mlruns/734453689598407122/models/m-57200df9955341a48c61511a6fe0e6fa/artifacts
+creation_timestamp: 1764155591371
+experiment_id: '734453689598407122'
+last_updated_timestamp: 1764155595956
+model_id: m-57200df9955341a48c61511a6fe0e6fa
+model_type: null
+name: model_RandomForest
+source_run_id: 168e04ee1fb942a7a9c89f3021c606ba
+status: 2
+status_message: null

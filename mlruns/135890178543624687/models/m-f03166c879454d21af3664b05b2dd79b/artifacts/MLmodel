@@ -1,0 +1,22 @@
+artifact_path: file:///D:/Techflitter/housing-mlops/mlruns/135890178543624687/models/m-f03166c879454d21af3664b05b2dd79b/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.6
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 3.6.0
+model_id: m-f03166c879454d21af3664b05b2dd79b
+model_size_bytes: 1192
+model_uuid: m-f03166c879454d21af3664b05b2dd79b
+prompts: null
+run_id: 895e0d67fa2b492aa47e80861c289d1d
+utc_time_created: '2025-11-26 11:15:28.308937'

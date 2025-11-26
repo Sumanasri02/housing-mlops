@@ -1,0 +1,14 @@
+artifact_uri: file:///D:/Techflitter/housing-mlops/mlruns/135890178543624687/895e0d67fa2b492aa47e80861c289d1d/artifacts
+end_time: 1764155734654
+entry_point_name: ''
+experiment_id: '135890178543624687'
+lifecycle_stage: active
+run_id: 895e0d67fa2b492aa47e80861c289d1d
+run_name: best_model_evaluation
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764155728154
+status: 3
+tags: []
+user_id: Sumanasri
