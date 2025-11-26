@@ -1,0 +1,62 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocessing/data_preprocessing.py
+    deps:
+    - path: data/Housing.csv
+      hash: md5
+      md5: 801f8030dad1df22a53edfdbfa4e80f0
+      size: 29981
+    - path: src/preprocessing/data_preprocessing.py
+      hash: md5
+      md5: 8fbf314a9bb7b00e8477ea5f10733fcc
+      size: 2508
+    outs:
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: 8131de130648c6769528d47be5aa47db
+      size: 91413
+    - path: models/preprocessor.pkl
+      hash: md5
+      md5: 784ad662b3ba7e5785a00435dd228a75
+      size: 5669
+  train:
+    cmd: python src/model_trainer/model_trainer.py
+    deps:
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: 8131de130648c6769528d47be5aa47db
+      size: 91413
+    - path: src/model_trainer/model_trainer.py
+      hash: md5
+      md5: 82e8a9b66420f98a8f25b1d93e304672
+      size: 2817
+    outs:
+    - path: models/best_model.pkl
+      hash: md5
+      md5: 931ec6428f0fb55708a7ef7745c8f724
+      size: 1592
+  evaluate:
+    cmd: python src/evaluation/evaluate_model.py
+    deps:
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: 8131de130648c6769528d47be5aa47db
+      size: 91413
+    - path: models/best_model.pkl
+      hash: md5
+      md5: 931ec6428f0fb55708a7ef7745c8f724
+      size: 1592
+    - path: src/evaluation/evaluate_model.py
+      hash: md5
+      md5: 2431fd5c09b0cbd35707698071f118a6
+      size: 1687
+    outs:
+    - path: metrics/test_metrics.json
+      hash: md5
+      md5: 15a5b49fe86b4be4eea030a11a101004
+      size: 97
+    - path: plots/prediction_vs_actual.png
+      hash: md5
+      md5: 0141df2ab107c0f48d737b9f34e13822
+      size: 54013
