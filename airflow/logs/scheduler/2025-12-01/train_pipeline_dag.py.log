@@ -874,3 +874,31 @@
 [2025-12-01T10:06:24.480+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:06:24.480+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-12-01T10:06:24.776+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:06:24.776+0000] {dag.py:4180} INFO - Setting next_dagrun for train_pipeline_dag to None, run_after=None
 [2025-12-01T10:06:24.852+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/train_pipeline_dag.py took 0.491 seconds
+[2025-12-01T10:06:55.346+0000] {processor.py:186} INFO - Started process (PID=114) to work on /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:06:55.348+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/train_pipeline_dag.py for tasks to queue
+[2025-12-01T10:06:55.353+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:06:55.352+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:06:55.391+0000] {processor.py:925} INFO - DAG(s) 'train_pipeline_dag' retrieved from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:06:55.492+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:06:55.492+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-12-01T10:06:55.728+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:06:55.728+0000] {dag.py:4180} INFO - Setting next_dagrun for train_pipeline_dag to None, run_after=None
+[2025-12-01T10:06:55.760+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/train_pipeline_dag.py took 0.423 seconds
+[2025-12-01T10:07:26.140+0000] {processor.py:186} INFO - Started process (PID=115) to work on /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:26.141+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/train_pipeline_dag.py for tasks to queue
+[2025-12-01T10:07:26.145+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:26.145+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:26.185+0000] {processor.py:925} INFO - DAG(s) 'train_pipeline_dag' retrieved from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:26.450+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:26.449+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-12-01T10:07:26.504+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:26.504+0000] {dag.py:4180} INFO - Setting next_dagrun for train_pipeline_dag to None, run_after=None
+[2025-12-01T10:07:26.582+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/train_pipeline_dag.py took 0.454 seconds
+[2025-12-01T10:07:57.041+0000] {processor.py:186} INFO - Started process (PID=116) to work on /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:57.043+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/train_pipeline_dag.py for tasks to queue
+[2025-12-01T10:07:57.048+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:57.048+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:57.094+0000] {processor.py:925} INFO - DAG(s) 'train_pipeline_dag' retrieved from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:07:57.152+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:57.152+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-12-01T10:07:57.177+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:07:57.177+0000] {dag.py:4180} INFO - Setting next_dagrun for train_pipeline_dag to None, run_after=None
+[2025-12-01T10:07:57.259+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/train_pipeline_dag.py took 0.231 seconds
+[2025-12-01T10:08:27.728+0000] {processor.py:186} INFO - Started process (PID=117) to work on /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:08:27.730+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/train_pipeline_dag.py for tasks to queue
+[2025-12-01T10:08:27.736+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:08:27.735+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:08:27.771+0000] {processor.py:925} INFO - DAG(s) 'train_pipeline_dag' retrieved from /opt/airflow/dags/train_pipeline_dag.py
+[2025-12-01T10:08:27.820+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:08:27.820+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-12-01T10:08:27.843+0000] {logging_mixin.py:190} INFO - [2025-12-01T10:08:27.843+0000] {dag.py:4180} INFO - Setting next_dagrun for train_pipeline_dag to None, run_after=None
+[2025-12-01T10:08:27.914+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/train_pipeline_dag.py took 0.197 seconds

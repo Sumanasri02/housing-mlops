@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+airflow/logs/
+*.log
+
+# Model artifacts
+models/*.pkl
+
+# MLflow files
+mlruns/
+
+# OS / IDE
+.vscode/
+*.DS_Store
