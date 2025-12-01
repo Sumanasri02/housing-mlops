@@ -1,5 +1,7 @@
 [core]
     autostage = true
-    remote = myremote
+    remote = localremote
 ['remote "myremote"']
     url = D:/Techflitter/dvc_remote
+['remote "localremote"']
+    url = D:\Techflitter\housing-mlops\dvc-store

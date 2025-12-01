@@ -1,1 +1,6 @@
-2025-11-26 12:53:00,315:INFO:Data loaded successfully: 545 rows, 13 columns
+2025-12-01 13:55:43,559:INFO:Data ingested successfully \u2192 (545, 13)
+2025-12-01 15:09:40,732:INFO:Data ingested successfully \u2192 (545, 13)
+2025-12-01 15:09:45,009:WARNING:Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FDB86236E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Housing-Model-Training
+2025-12-01 15:09:53,390:WARNING:Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FDB86F3110>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Housing-Model-Training
+2025-12-01 15:10:06,092:WARNING:Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FDB86F2330>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Housing-Model-Training
+2025-12-01 15:17:41,507:INFO:Data ingested successfully \u2192 (545, 13)

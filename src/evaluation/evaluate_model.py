@@ -1,58 +1,34 @@
-import os
 import joblib
 import pandas as pd
-import numpy as np
 import json
-import matplotlib.pyplot as plt
-import mlflow
-import mlflow.sklearn
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+import os
+from sklearn.metrics import r2_score, mean_squared_error
 
-# Paths
-MODEL_PATH = r"D:\Techflitter\housing-mlops\models\best_model.pkl"
-TEST_DATA_PATH = r"D:\Techflitter\housing-mlops\data\preprocessed_data.csv"
-METRICS_PATH = r"D:\Techflitter\housing-mlops\metrics\test_metrics.json"
-PLOT_PATH = r"D:\Techflitter\housing-mlops\plots\prediction_vs_actual.png"
+MODEL_PATH = "models/best_model.pkl"
+TEST_DATA_PATH = "data/preprocessed_data.csv"
+METRICS_PATH = "metrics/test_metrics.json"
 
-# Load model
-model = joblib.load(MODEL_PATH)
+def main():
+    try:
+        model = joblib.load(MODEL_PATH)
+        df = pd.read_csv(TEST_DATA_PATH)
+        X = df.drop(columns=["price"])
+        y = df["price"]
 
-# Load test data
-df = pd.read_csv(TEST_DATA_PATH)
-X_test = df.drop(columns=["price"])
-y_test = df["price"]
+        preds = model.predict(X)
 
-# Predict
-y_pred = model.predict(X_test)
+        metrics = {
+            "R2": r2_score(y, preds),
+            "RMSE": mean_squared_error(y, preds, squared=False),
+        }
 
-# Compute metrics
-r2 = r2_score(y_test, y_pred)
-mse = mean_squared_error(y_test, y_pred)
-mae = mean_absolute_error(y_test, y_pred)
+        os.makedirs(os.path.dirname(METRICS_PATH), exist_ok=True)
+        with open(METRICS_PATH, "w") as f:
+            json.dump(metrics, f, indent=4)
 
-metrics = {"R2": r2, "MSE": mse, "MAE": mae}
+        print("📊 Model evaluation complete")
+        return True
 
-# Save metrics
-os.makedirs(os.path.dirname(METRICS_PATH), exist_ok=True)
-with open(METRICS_PATH, "w") as f:
-    json.dump(metrics, f, indent=4)
-
-print("Evaluation Metrics:", metrics)
-
-# Plot predicted vs actual
-os.makedirs(os.path.dirname(PLOT_PATH), exist_ok=True)
-plt.scatter(y_test, y_pred, alpha=0.7)
-plt.xlabel("Actual")
-plt.ylabel("Predicted")
-plt.title("Predicted vs Actual")
-plt.savefig(PLOT_PATH)
-plt.close()
-
-# MLflow Logging
-mlflow.set_experiment("Housing-Price-Evaluation")
-with mlflow.start_run(run_name="best_model_evaluation"):
-    mlflow.log_metrics(metrics)
-    mlflow.log_artifact(PLOT_PATH)
-    mlflow.sklearn.log_model(model, "best_model")
-
-print("Evaluation complete! Metrics and plot saved, logged to MLflow.")
+    except Exception as e:
+        print("❌ Evaluation failed:", e)
+        return False

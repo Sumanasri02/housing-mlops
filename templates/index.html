@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-text {
+            font-size: 2.2rem;
+            color: #f39c12;
+            font-weight: 600;
+        }
+        .badge-result {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="card mx-auto" style="max-width: 950px;">
+            <p class="text-center header-text">🏠 House Price Predictor</p>
+
+            <form id="predictionForm">
+                <div class="row g-3">
+
+                    <div class="col-md-3">
+                        <label class="form-label">Area (sq ft)</label>
+                        <input id="area" type="number" class="form-control" required min="1">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Bedrooms</label>
+                        <input id="bedrooms" type="number" class="form-control" required min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Bathrooms</label>
+                        <input id="bathrooms" type="number" class="form-control" required min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Stories</label>
+                        <input id="stories" type="number" class="form-control" required min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Main Road</label>
+                        <select id="mainroad" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Guest Room</label>
+                        <select id="guestroom" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Basement</label>
+                        <select id="basement" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Hot Water</label>
+                        <select id="hotwaterheating" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">AC</label>
+                        <select id="airconditioning" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Parking</label>
+                        <input id="parking" type="number" class="form-control" required min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Preferred Area</label>
+                        <select id="prefarea" class="form-select">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label">Furnishing</label>
+                        <select id="furnishingstatus" class="form-select">
+                            <option value="furnished">Furnished</option>
+                            <option value="semi-furnished">Semi-furnished</option>
+                            <option value="unfurnished">Unfurnished</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-warning px-4">Predict Price</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-4">
+                <span class="badge bg-success badge-result">
+                    Predicted Price: <span id="priceDisplay">N/A</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+<script>
+document.getElementById('predictionForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    document.getElementById('priceDisplay').textContent = 'Predicting...';
+
+    const data = {
+        area: +document.getElementById('area').value,
+        bedrooms: +document.getElementById('bedrooms').value,
+        bathrooms: +document.getElementById('bathrooms').value,
+        stories: +document.getElementById('stories').value,
+        mainroad: document.getElementById('mainroad').value,
+        guestroom: document.getElementById('guestroom').value,
+        basement: document.getElementById('basement').value,
+        hotwaterheating: document.getElementById('hotwaterheating').value,
+        airconditioning: document.getElementById('airconditioning').value,
+        parking: +document.getElementById('parking').value,
+        prefarea: document.getElementById('prefarea').value,
+        furnishingstatus: document.getElementById('furnishingstatus').value,
+    };
+
+    fetch('/predict', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('priceDisplay').textContent =
+        new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' })
+        .format(data.predicted_price);
+    })
+    .catch(error => {
+        console.error(error);
+        document.getElementById('priceDisplay').textContent = "Error fetching price!";
+    });
+});
+</script>
+
+</body>
+</html>

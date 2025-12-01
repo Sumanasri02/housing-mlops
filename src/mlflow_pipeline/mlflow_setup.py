@@ -1,25 +1,16 @@
 import mlflow
 import mlflow.sklearn
 import pandas as pd
+import os
 
-# --------------------------------------
-# Correct path to your preprocessed data
-# --------------------------------------
-data_path = r"D:\Techflitter\housing-mlops\data\preprocessed_data.csv"
+DATA_PATH = "/opt/airflow/data/preprocessed_data.csv"
+os.makedirs("/opt/airflow/logs", exist_ok=True)
 
-# Load the preprocessed dataset
-df = pd.read_csv(data_path)
+df = pd.read_csv(DATA_PATH)
 
-# --------------------------------------
-# Create MLflow Experiment
-# --------------------------------------
 mlflow.set_experiment("Housing-Price-Experiment")
-
 with mlflow.start_run():
-
-    # Log the preprocessed CSV file
-    mlflow.log_artifact(data_path, artifact_path="preprocessed_data")
-
+    mlflow.log_artifact(DATA_PATH, artifact_path="preprocessed_data")
     print("✔ preprocessed_data.csv logged successfully to MLflow")
 
 print("\nMLflow setup step completed!")
