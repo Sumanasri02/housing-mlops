@@ -16,3 +16,10 @@ mlruns/
 # OS / IDE
 .vscode/
 *.DS_Store
+airflow/
+mlruns/
+src/eda/
+src/mlflow_tracking.py
+src/registry_old.py
+src/train_old.py
+logs/
